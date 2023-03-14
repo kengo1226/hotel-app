@@ -58,12 +58,16 @@ const Home = () => {
           }}
         />
         <div className='mt-4 sm:mt-0 sm:ml-3'>
-          <button className='block w-full rounded-md px-5 py-3 bg-active text-base font-medium text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:px-10'>
+          <button 
+            className='block w-full rounded-md px-5 py-3 bg-active text-base font-medium text-primary focus:outline-none focus:ring-2 focus:ring-primary sm:px-10'
+            onClick={() => getCity()}
+          >
             Search
           </button>
         </div>
       </div>
 
+      {city && (
       <div className='mt-10 w-full sm:mx-auto lg:mx-0'>
         <div className='md:grid md:grid-cols-6 gap-1 flex flex-col'>
           <div className='rounded-l-lg col-span-2 flex flex-col py-2 items-center bg-primary'>
@@ -82,12 +86,21 @@ const Home = () => {
 					</div>
 
 					<div className="col-span-1 bg-active hover:opacity-80 rounded-r-lg">
-						<button type="submit" className="w-full h-full md:py-0 py-4 text-primary font-bold break-words">
+						<button 
+              type="submit" 
+              className="w-full h-full md:py-0 py-4 text-primary font-bold break-words"
+              onClick={() => getHotels()}
+            >
 							Find Hotels
 						</button>
 					</div>
         </div>
       </div>
+      )}
+
+      {hotels && (
+
+      )}
 
 		</div>
   )
